@@ -5,9 +5,9 @@ import 'firebase_options.dart'; // Importa el archivo generado por FlutterFire
 
 // El método `main` ahora usa el archivo de configuración `firebase_options.dart`
 void main() async {
-  // Asegúrate de que los widgets de Flutter estén inicializados
+  
   WidgetsFlutterBinding.ensureInitialized();
-  // Inicializa Firebase usando las opciones de la plataforma actual
+  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -199,7 +199,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     decoration: const InputDecoration(labelText: 'Nombre'),
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
-                        return 'Por favor, ingresa tu nombre.'; // Requisito 3.a
+                        return 'Por favor, ingresa tu nombre.'; 
                       }
                       return null;
                     },
@@ -214,11 +214,11 @@ class _AuthScreenState extends State<AuthScreen> {
                     keyboardType: TextInputType.number,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Por favor, ingresa tu edad.'; // Requisito 3.a
+                        return 'Por favor, ingresa tu edad.'; 
                       }
                       final age = int.tryParse(value);
                       if (age == null || age <= 0) {
-                        return 'La edad debe ser un número mayor que cero.'; // Requisito 3.a
+                        return 'La edad debe ser un número mayor que cero.'; 
                       }
                       return null;
                     },
@@ -232,7 +232,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
                     if (value == null || !value.contains('@') || !value.contains('.')) {
-                      return 'Por favor, ingresa un correo válido.'; // Requisito 3.a
+                      return 'Por favor, ingresa un correo válido.'; 
                     }
                     return null;
                   },
